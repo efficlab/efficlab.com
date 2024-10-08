@@ -1,0 +1,74 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app .title {
+  height: 80px;
+} 
+
+.app .note {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 200;
+  text-align: center;
+} 
+
+.app .chart {
+
+}
+
+.app .data {
+  border: solid lightgray .5px;
+  padding: 20px 48px 48px;
+  margin-top: 20px;
+}
+
+.app .container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 28px;
+  position: relative;
+  justify-content: center;
+}
+
+.app .container .labels {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 28px;
+  font-size: 42px;
+  font-style: italic;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.app .container .labels > span:last-child {
+  margin-top: 28px;
+}
+
+.app .container .values {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.app .container .values > span:last-child {
+  margin-top: 28px;
+}
+
+.app .container .separator {
+  position: absolute;
+  width: 100%;
+  height: .5px;
+  bottom: 55px;
+  background-color: lightgray;
+  display: block;
+  border: 0;
+  padding: 0;
+}
