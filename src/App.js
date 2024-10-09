@@ -42,32 +42,40 @@ const App = () => {
       lineColor: '#2962FF', 
       topColor: '#2962FF', 
       bottomColor: 'rgba(41, 98, 255, 0.28)',
-    });
+    })
     const chartData = data.map(d => {
       return {
         time: d?.date,
         value: d?.values?.reduce((prev, curr) => prev += curr, 0)
       }
     })
-    areaSeries.setData(chartData);
-    chart.timeScale().fitContent();
+    areaSeries.setData(chartData)
+    chart.timeScale().fitContent()
   }, [])
 
   return (
     <div className="app">
       <img className='title' src={logo} alt="EfficLab logo" />
-      <div className='note'>We aim to be the biggest and the most professional Chinese channel for computer science.</div>
-      <div className='note'>Please contact <a href= "mailto: service@efficlab.com">service@efficlab.com</a> for any business cooperation.</div>
+      <div className='note'>We aim to be the biggest and the most professional Chinese channel of computer technology.</div>
+      <div className='note'>Please contact <a className='mail' href= "mailto: service@efficlab.com">service@efficlab.com</a> for any business cooperation.</div>
       <div className='data'>
-        <div className='note'>As of {latestDate}</div>
+        <div className='note'>Followers as of {latestDate}</div>
         <div className='chart' ref={chartDOM}></div>
         <div className='container'>
           <hr className='separator' />
           <div className='labels'>
-            <span>YouTube</span>
-            <span>Bilibili</span>
-            <span>RED</span>
-            <span>Douyin</span>
+            <span className='yt'>
+              <a rel="noreferrer" href="https://www.youtube.com/@efficlab" target='_blank'>YouTube</a>
+            </span>
+            <span className='bili'>
+              <a rel="noreferrer" href="https://space.bilibili.com/5953240" target='_blank'>Bilibili</a>
+            </span>
+            <span className='red'>
+              RED
+            </span>
+            <span className='douyin'>
+              Douyin
+            </span>
             <span>Total</span>
           </div>
           <div className='values'>
