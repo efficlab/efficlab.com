@@ -1,12 +1,27 @@
-import { useEffect, useMemo, useRef, } from 'react'
+import React, { useMemo, } from 'react'
 import dayjs from 'dayjs'
-import { createChart } from 'lightweight-charts'
+import ReactEChartsCore from 'echarts-for-react/lib/core'
+import * as echarts from 'echarts/core';
+import { LineChart, } from 'echarts/charts';
+import {
+  GridComponent,
+  TooltipComponent,
+} from 'echarts/components';
+import { CanvasRenderer, } from 'echarts/renderers';
 import './App.css'
 import logo from './logo.png'
+
+echarts.use(
+  [TooltipComponent, GridComponent, LineChart, CanvasRenderer]
+)
 
 const data = [
   {
     date: '2024-10-08',
+    values: [1820, 24134, 1885, 4644],  // YT, B, RED, DOUYIN.
+  }, 
+  {
+    date: '2024-10-15',
     values: [1820, 24134, 1885, 4644],  // YT, B, RED, DOUYIN.
   }, 
 ]
@@ -16,7 +31,6 @@ const numberWithCommas = (x) => {
 }
 
 const App = () => {
-  const chartDOM = useRef(null)
   const total = useMemo(() => {
     return numberWithCommas(
       data[data.length - 1]?.values?.reduce((prev, curr) => {
@@ -33,24 +47,99 @@ const App = () => {
     return data[data.length - 1]?.values?.map(value => <span>{numberWithCommas(value)}</span>)
   }, [])
 
-  useEffect(() => { 
-    const chart = createChart(chartDOM.current, { 
-      width: 400, 
-      height: 200,
-    })
-    const areaSeries = chart.addAreaSeries({ 
-      lineColor: '#2962FF', 
-      topColor: '#2962FF', 
-      bottomColor: 'rgba(41, 98, 255, 0.28)',
-    })
-    const chartData = data.map(d => {
-      return {
-        time: d?.date,
-        value: d?.values?.reduce((prev, curr) => prev += curr, 0)
-      }
-    })
-    areaSeries.setData(chartData)
-    chart.timeScale().fitContent()
+  const chartOptions = useMemo(() => {
+    const valueCollector = idx => 
+      data.reduce((prev, curr) => {
+        prev.push(curr?.values?.[idx])
+        return prev
+      }, [])
+
+    return {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985'
+          }
+        }
+      },
+      legend: {
+        show: false,
+      },
+      grid: {
+        left: 0,
+        right: 0,
+        bottom: 0,
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          boundaryGap: false,
+          data: data.map(i => dayjs(i?.date).format('MMM YYYY'))
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: 'Douyin',
+          type: 'line',
+          stack: 'Total',
+          itemStyle: {
+            // color: '#010101cf'
+          },
+          areaStyle: {},
+          emphasis: {
+            focus: 'series'
+          },
+          data: valueCollector(3)
+        },
+        {
+          name: 'RED',
+          type: 'line',
+          stack: 'Total',
+          itemStyle: {
+            // color: '#ff2543cf'
+          },
+          areaStyle: {},
+          emphasis: {
+            focus: 'series'
+          },
+          data: valueCollector(2)
+        },
+        {
+          name: 'Bilibili',
+          type: 'line',
+          stack: 'Total',
+          itemStyle: {
+            // color: '#01a2d6cf'
+          },
+          areaStyle: {},
+          emphasis: {
+            focus: 'series'
+          },
+          data: valueCollector(1)
+        },
+        {
+          name: 'YouTube',
+          type: 'line',
+          stack: 'Total',
+          itemStyle: {
+            // color: '#ff0000cf'
+          },
+          areaStyle: {},
+          emphasis: {
+            focus: 'series'
+          },
+          data: valueCollector(0)
+        },
+      ]
+    }
   }, [])
 
   return (
@@ -60,7 +149,14 @@ const App = () => {
       <div className='note'>Please contact <a className='mail' href= "mailto: service@efficlab.com">service@efficlab.com</a> for any business cooperation.</div>
       <div className='data'>
         <div className='note'>Followers as of {latestDate}</div>
-        <div className='chart' ref={chartDOM}></div>
+        <div className='chart'>
+          <ReactEChartsCore
+            echarts={echarts}
+            option={chartOptions}
+            notMerge={true}
+            lazyUpdate={true}
+          />
+        </div>
         <div className='container'>
           <hr className='separator' />
           <div className='labels'>
