@@ -22,7 +22,7 @@ const data = [
   }, 
   {
     date: '2024-10-15',
-    values: [1820, 24134, 1885, 4644],  // YT, B, RED, DOUYIN.
+    values: [2718, 24472, 1909, 4680],  // YT, B, RED, DOUYIN.
   }, 
 ]
 
@@ -68,16 +68,17 @@ const App = () => {
         show: false,
       },
       grid: {
-        left: 0,
-        right: 0,
+        left: 20,
+        right: 20,
         bottom: 0,
+        top: 20,
         containLabel: true
       },
       xAxis: [
         {
           type: 'category',
           boundaryGap: false,
-          data: data.map(i => dayjs(i?.date).format('MMM YYYY'))
+          data: data.map(i => dayjs(i?.date).format('MMM DD'))
         }
       ],
       yAxis: [
@@ -155,6 +156,10 @@ const App = () => {
             option={chartOptions}
             notMerge={true}
             lazyUpdate={true}
+            style={{
+              height: 250,
+              width: 400,
+            }}
           />
         </div>
         <div className='container'>
@@ -172,7 +177,7 @@ const App = () => {
             <span className='douyin'>
               Douyin
             </span>
-            <span>Total</span>
+            <span>TOTAL</span>
           </div>
           <div className='values'>
             {latestValues}
