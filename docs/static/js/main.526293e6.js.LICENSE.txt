@@ -1,9 +1,12 @@
 /*!
- * @license
- * TradingView Lightweight Charts™ v4.2.1
- * Copyright (c) 2024 TradingView, Inc.
- * Licensed under Apache License 2.0 https://www.apache.org/licenses/LICENSE-2.0
- */
+* ZRender, a high performance 2d drawing library.
+*
+* Copyright (c) 2013, Baidu Inc.
+* All rights reserved.
+*
+* LICENSE
+* https://github.com/ecomfe/zrender/blob/master/LICENSE.txt
+*/
 
 /**
  * @license React
