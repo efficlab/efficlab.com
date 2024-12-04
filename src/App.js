@@ -47,6 +47,10 @@ const data = [
   {
     date: '2024-11-27',
     values: [3899, 28685, 1932, 4788],  // YT, B, RED, DOUYIN.
+  },
+  {
+    date: '2024-12-04',
+    values: [3952, 29047, 1933, 4790],  // YT, B, RED, DOUYIN.
   }, 
 ]
 
