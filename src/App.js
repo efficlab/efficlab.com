@@ -53,11 +53,11 @@ const data = [
     values: [3952, 29047, 1933, 4790],  // YT, B, RED, DOUYIN.
   }, 
   {
-    date: '2024-12-04',
+    date: '2024-12-10',
     values: [3971, 29715, 1936, 4783],  // YT, B, RED, DOUYIN.
   }, 
   {
-    date: '2024-12-04',
+    date: '2024-12-17',
     values: [4184, 30344, 1938, 4789],  // YT, B, RED, DOUYIN.
   }, 
 ]
