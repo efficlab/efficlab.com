@@ -56,6 +56,10 @@ const data = [
     date: '2024-12-04',
     values: [3971, 29715, 1936, 4783],  // YT, B, RED, DOUYIN.
   }, 
+  {
+    date: '2024-12-04',
+    values: [4184, 30344, 1938, 4789],  // YT, B, RED, DOUYIN.
+  }, 
 ]
 
 const numberWithCommas = (x) => {
