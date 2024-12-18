@@ -6,61 +6,16 @@ import { LineChart, } from 'echarts/charts';
 import {
   GridComponent,
   TooltipComponent,
+  LegendComponent,
 } from 'echarts/components';
 import { CanvasRenderer, } from 'echarts/renderers';
 import './App.css'
 import logo from './logo.png'
+import data from './records'
 
 echarts.use(
-  [TooltipComponent, GridComponent, LineChart, CanvasRenderer]
+  [TooltipComponent, GridComponent, LineChart, CanvasRenderer, LegendComponent]
 )
-
-const data = [
-  {
-    date: '2024-10-08',
-    values: [1820, 24134, 1885, 4644],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-10-15',
-    values: [2718, 24472, 1909, 4680],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-10-22',
-    values: [3182, 24791, 1926, 4710],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-10-30',
-    values: [3514, 26159, 1931, 4733],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-11-06',
-    values: [3680, 26712, 1928, 4746],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-11-13',
-    values: [3793, 27339, 1929, 4755],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-11-20',
-    values: [3862, 28032, 1932, 4757],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-11-27',
-    values: [3899, 28685, 1932, 4788],  // YT, B, RED, DOUYIN.
-  },
-  {
-    date: '2024-12-04',
-    values: [3952, 29047, 1933, 4790],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-12-10',
-    values: [3971, 29715, 1936, 4783],  // YT, B, RED, DOUYIN.
-  }, 
-  {
-    date: '2024-12-17',
-    values: [4184, 30344, 1938, 4789],  // YT, B, RED, DOUYIN.
-  }, 
-]
 
 const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -104,17 +59,17 @@ const App = () => {
         show: false,
       },
       grid: {
-        left: 20,
-        right: 20,
+        left: 5,
+        right: 5,
         bottom: 0,
-        top: 20,
+        top: 10,
         containLabel: true
       },
       xAxis: [
         {
           type: 'category',
           boundaryGap: false,
-          data: data.map(i => dayjs(i?.date).format('MMM DD'))
+          data: data.map(i => dayjs(i?.date).format('YYYY-MM-DD'))
         }
       ],
       yAxis: [
