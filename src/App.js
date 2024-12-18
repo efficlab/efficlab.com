@@ -7,6 +7,7 @@ import {
   GridComponent,
   TooltipComponent,
   LegendComponent,
+  // DataZoomComponent,
 } from 'echarts/components';
 import { CanvasRenderer, } from 'echarts/renderers';
 import './App.css'
@@ -14,34 +15,44 @@ import logo from './logo.png'
 import data from './records'
 
 echarts.use(
-  [TooltipComponent, GridComponent, LineChart, CanvasRenderer, LegendComponent]
+  [
+    TooltipComponent, 
+    GridComponent, 
+    LineChart, 
+    CanvasRenderer, 
+    LegendComponent, 
+    // DataZoomComponent,
+  ]
 )
 
 const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
+const valueRecords = Object.values(data)
+const labelRecords = Object.keys(data)
+
 const App = () => {
   const total = useMemo(() => {
     return numberWithCommas(
-      data[data.length - 1]?.values?.reduce((prev, curr) => {
+      valueRecords[valueRecords.length - 1]?.reduce((prev, curr) => {
         return prev += curr
       }, 0)
     )
   }, [])
 
   const latestDate = useMemo(() => {
-    return dayjs(data[data.length - 1]?.date).format('MMM DD, YYYY')
+    return dayjs(labelRecords[labelRecords.length - 1]).format('MMM DD, YYYY')
   }, [])
 
   const latestValues = useMemo(() => {
-    return data[data.length - 1]?.values?.map(value => <span>{numberWithCommas(value)}</span>)
+    return valueRecords[valueRecords.length - 1]?.map((value, idx) => <span key={idx}>{numberWithCommas(value)}</span>)
   }, [])
 
   const chartOptions = useMemo(() => {
-    const valueCollector = idx => 
-      data.reduce((prev, curr) => {
-        prev.push(curr?.values?.[idx])
+    const valueCollector = idx =>
+      valueRecords.reduce((prev, curr) => {
+        prev.push(curr?.[idx])
         return prev
       }, [])
 
@@ -69,7 +80,7 @@ const App = () => {
         {
           type: 'category',
           boundaryGap: false,
-          data: data.map(i => dayjs(i?.date).format('YYYY-MM-DD'))
+          data: labelRecords.map(i => dayjs(i).format('YYYY-MM-DD'))
         }
       ],
       yAxis: [
@@ -83,7 +94,7 @@ const App = () => {
           type: 'line',
           stack: 'Total',
           itemStyle: {
-            // color: '#010101cf'
+            color: '#010101cf'
           },
           areaStyle: {},
           emphasis: {
@@ -96,7 +107,7 @@ const App = () => {
           type: 'line',
           stack: 'Total',
           itemStyle: {
-            // color: '#ff2543cf'
+            color: '#ff2543cf'
           },
           areaStyle: {},
           emphasis: {
@@ -109,7 +120,7 @@ const App = () => {
           type: 'line',
           stack: 'Total',
           itemStyle: {
-            // color: '#01a2d6cf'
+            color: '#01a2d6cf'
           },
           areaStyle: {},
           emphasis: {
@@ -122,7 +133,7 @@ const App = () => {
           type: 'line',
           stack: 'Total',
           itemStyle: {
-            // color: '#ff0000cf'
+            color: '#ff0000cf'
           },
           areaStyle: {},
           emphasis: {
@@ -138,7 +149,7 @@ const App = () => {
     <div className="app">
       <img className='title' src={logo} alt="EfficLab logo" />
       <div className='note'>We aim to be the biggest and the most professional Chinese channel of computer technology.</div>
-      <div className='note'>Please contact <a className='mail' href= "mailto: service@efficlab.com">service@efficlab.com</a> for any business cooperation.</div>
+      <div className='note'>Please contact <a className='mail' href="mailto: service@efficlab.com">service@efficlab.com</a> for any business cooperation.</div>
       <div className='data'>
         <div className='note'>Followers as of {latestDate}</div>
         <div className='chart'>
