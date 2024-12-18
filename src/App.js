@@ -148,8 +148,9 @@ const App = () => {
   return (
     <div className="app">
       <img className='title' src={logo} alt="EfficLab logo" />
-      <div className='note'>We aim to be the biggest and the most professional Chinese channel of computer technology.</div>
+      <div className='note'>We aim to be the biggest and most professional online media channel for computer technology on the planet.</div>
       <div className='note'>Please contact <a className='mail' href="mailto: service@efficlab.com">service@efficlab.com</a> for any business cooperation.</div>
+      <div className='note'>商业合作，请联系 <a className='mail' href="mailto: service@efficlab.com">service@efficlab.com</a>。</div>
       <div className='data'>
         <div className='note'>Followers as of {latestDate}</div>
         <div className='chart'>
@@ -168,10 +169,12 @@ const App = () => {
           <hr className='separator' />
           <div className='labels'>
             <span className='yt'>
-              <a rel="noreferrer" href="https://www.youtube.com/@efficlab" target='_blank'>YouTube</a>
+              <a rel="noreferrer" href="https://www.youtube.com/@efficlab" target='_blank'>[Link]</a>
+              YouTube
             </span>
             <span className='bili'>
-              <a rel="noreferrer" href="https://space.bilibili.com/5953240" target='_blank'>Bilibili</a>
+              <a rel="noreferrer" href="https://space.bilibili.com/5953240" target='_blank'>[Link]</a>
+              Bilibili
             </span>
             <span className='red'>
               RED

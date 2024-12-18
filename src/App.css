@@ -57,6 +57,13 @@ a:visited, a:active, a:link, a:hover {
   font-weight: bold;
 }
 
+.app .container .labels a {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #0000EE;
+  margin-right: 5px;
+}
+
 .app .container .labels .yt {
   color: #ff0000;
 }
