@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#1f1f1f">
-  <meta name="description" content="EfficLab is an independent studio making games and technology content.">
-  <title>EfficLab</title>
+  <meta name="theme-color" content="#fbf6ec">
+  <meta name="description" content="EfficLab is an independent studio making games and technology videos. Now building Hutabout.">
+  <title>EfficLab — independent games &amp; tech videos</title>
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="logo192.png">
   <link rel="manifest" href="manifest.json">
@@ -16,57 +16,97 @@
     <a href="#" class="brand"><img src="logo.png" alt="EfficLab"></a>
     <nav>
       <a href="#games">Games</a>
-      <a href="#media">Media</a>
+      <a href="#videos">Videos</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h1>Small team. Efficient tools.<br>Games with heart.</h1>
-      <p>EfficLab is an independent studio building games and technology content.</p>
-      <p class="zh">EfficLab 是一家独立工作室，做游戏，也做科技内容。</p>
+      <p class="eyebrow">Independent studio</p>
+      <h1>Small team.<br>Efficient tools.<br><span class="hl">Games with heart.</span></h1>
+      <p class="lead">EfficLab makes games and technology videos.</p>
+      <p class="lead zh">EfficLab 是一家独立工作室，做游戏，也做科技视频。</p>
     </section>
 
     <section id="games" class="section">
-      <h2>Games</h2>
+      <h2 class="label">Now building</h2>
       <article class="game">
         <div class="game-art" aria-hidden="true">
-          <span class="sun"></span><span class="sea"></span><span class="isle"></span><span class="hut"></span>
+          <svg viewBox="0 0 480 360" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffd9a8"/>
+                <stop offset="1" stop-color="#fff1dc"/>
+              </linearGradient>
+            </defs>
+            <rect width="480" height="360" fill="url(#sky)"/>
+            <circle cx="380" cy="80" r="34" fill="#ffb84d"/>
+            <path d="M0 250 Q120 215 240 240 T480 230 V360 H0Z" fill="#9fd8c8"/>
+            <path d="M0 285 Q140 255 260 280 T480 270 V360 H0Z" fill="#2aa1bd"/>
+            <ellipse cx="170" cy="262" rx="130" ry="34" fill="#7cc06b"/>
+            <path class="trail" d="M205 250 C 260 250, 300 225, 350 236 S 420 262, 452 246" fill="none" stroke="#5a3d2b" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+            <g transform="translate(110 168)">
+              <rect x="0" y="34" width="84" height="60" rx="6" fill="#d9a26b"/>
+              <path d="M-12 40 L42 0 L96 40 Z" fill="#c4552f"/>
+              <rect x="32" y="58" width="22" height="36" rx="11" fill="#5a3d2b"/>
+              <rect x="10" y="50" width="16" height="16" rx="3" fill="#fff3c4"/>
+              <rect x="62" y="12" width="10" height="20" fill="#5a3d2b"/>
+            </g>
+            <g class="pip" transform="translate(340 196)">
+              <ellipse cx="0" cy="40" rx="14" ry="4" fill="#00000022"/>
+              <rect x="-11" y="10" width="22" height="26" rx="10" fill="#f4d548"/>
+              <circle cx="0" cy="2" r="13" fill="#fde7c9"/>
+              <circle cx="-4" cy="1" r="1.8" fill="#2b2b2b"/>
+              <circle cx="5" cy="1" r="1.8" fill="#2b2b2b"/>
+              <path d="M-14 -4 Q0 -20 14 -4 Z" fill="#2aa1bd"/>
+              <line x1="10" y1="18" x2="24" y2="-6" stroke="#5a3d2b" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="25" cy="-9" r="7" fill="#c4552f"/>
+            </g>
+          </svg>
         </div>
         <div class="game-body">
-          <div class="tag">In development · working title</div>
-          <h3>Homeward</h3>
-          <p>Raise an AI companion who grows up, send it off to survive a wild island, and it comes back with stories — and scars.</p>
-          <p class="zh">养一个会长大的 AI 伙伴，送它去荒岛闯荡，它会带着故事和伤疤回来。</p>
-          <div class="platforms">Coming to iOS · Android · Steam</div>
+          <span class="tag">Working title</span>
+          <h3>Hutabout</h3>
+          <p class="pitch">Raise a little companion in your hut. Send it off on adventures. It comes home with stories, surprises — and a few scars.</p>
+          <p class="zh">在小屋里养一个会长大的伙伴，送它出门闯荡，它会带着故事、惊喜和一点伤疤回家。</p>
+          <ul class="facts">
+            <li>AI companion</li>
+            <li>Cozy &amp; story-driven</li>
+            <li>iOS · Android · Steam</li>
+          </ul>
         </div>
       </article>
     </section>
 
-    <section id="media" class="section">
-      <h2>Media</h2>
-      <p>We aim to be the biggest and most professional online media channel for computer technology on the planet.</p>
-      <div class="media">
-        <div class="chart-wrap">
-          <div class="note">Followers as of <span id="latest-date"></span></div>
-          <svg id="chart" viewBox="0 0 400 220" preserveAspectRatio="none" role="img" aria-label="Follower growth"></svg>
-          <div id="tip" class="tip" hidden></div>
-        </div>
-        <ul id="channels" class="channels"></ul>
+    <section id="videos" class="section">
+      <h2 class="label">Videos</h2>
+      <p class="section-lead">We make videos about computer technology. Come say hi.</p>
+      <div class="channels">
+        <a class="channel yt" href="https://www.youtube.com/@efficlab" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg>
+          <span class="name">YouTube</span>
+          <span class="handle">@efficlab</span>
+          <span class="go">↗</span>
+        </a>
+        <a class="channel bili" href="https://space.bilibili.com/5953240" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2.6a1 1 0 0 1 1.4 0L11 5h2l2.4-2.4a1 1 0 1 1 1.4 1.4L15.8 5H18a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h2.2l-1-1a1 1 0 0 1 0-1.4ZM6 7.5A1.5 1.5 0 0 0 4.5 9v8A1.5 1.5 0 0 0 6 18.5h12a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 18 7.5H6Zm2.5 3.5a1.2 1.2 0 0 1 1.2 1.2v1.6a1.2 1.2 0 1 1-2.4 0v-1.6A1.2 1.2 0 0 1 8.5 11Zm7 0a1.2 1.2 0 0 1 1.2 1.2v1.6a1.2 1.2 0 1 1-2.4 0v-1.6a1.2 1.2 0 0 1 1.2-1.2Z"/></svg>
+          <span class="name">Bilibili</span>
+          <span class="handle">EfficLab</span>
+          <span class="go">↗</span>
+        </a>
       </div>
     </section>
 
     <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>For business cooperation, please contact <a href="mailto:service@efficlab.com">service@efficlab.com</a>.</p>
-      <p class="zh">商业合作，请联系 <a href="mailto:service@efficlab.com">service@efficlab.com</a>。</p>
+      <h2 class="label">Contact</h2>
+      <a class="mail" href="mailto:service@efficlab.com">service@efficlab.com</a>
+      <p>For business cooperation, press, or just to say hello.</p>
+      <p class="zh">商业合作、媒体或任何想聊的，欢迎来信。</p>
     </section>
   </main>
 
   <footer>© <span id="year"></span> EfficLab</footer>
-
-  <script src="records.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
