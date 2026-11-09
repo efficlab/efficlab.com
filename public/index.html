@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="logo192.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <header class="top">
@@ -103,14 +103,58 @@
       <h2 class="label">Tools</h2>
       <article class="tool">
         <div class="tool-head">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="10" width="40" height="28" rx="6" fill="var(--teal)"/><path d="M20 18.5v11l9.5-5.5z" fill="#fff"/><rect x="10" y="40" width="28" height="3" rx="1.5" fill="var(--line)"/></svg>
+          <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><rect x="4" y="10" width="40" height="28" rx="6" fill="#2aa1bd"/><path d="M20 18.5v11l9.5-5.5z" fill="#fff"/><rect x="10" y="40" width="28" height="3" rx="1.5" fill="#ebe2d3"/></svg>
           <div>
             <h3>Effic<span>Studio</span></h3>
-            <p class="sub">The video workbench behind our channel</p>
+            <p class="sub">The video workbench behind our channel · 我们频道背后的视频工作台</p>
           </div>
         </div>
-        <p>EfficStudio is our in-house tool for making the technical explainer videos of the EfficLab中文 channel: research, script, picture, narration recording, rendering, and uploading the finished videos to our own Bilibili and YouTube channels. It runs only on our own computer; it is not a public service and has no other users.</p>
-        <p class="zh">EfficStudio 是我们自用的视频制作工作台，用来做 EfficLab中文 频道的技术讲解视频（选题、解说词、画面、录音、渲染），并把做好的视频发布到我们自己的 B站 和 YouTube 账号。它只在我们自己的电脑上运行，不对外提供服务，也没有其他用户。</p>
+        <p>Every EfficLab中文 explainer is <b>written as code</b>: each film is a web page that can draw any moment of itself, rendered frame by frame into a 1080p video. An AI agent does the research, the script and the picture; code does every step that has one right answer; and the host confirms each step before the next one starts.</p>
+        <p class="zh">EfficLab中文 的每一部讲解视频都是<b>用代码写出来的</b>：一部片子就是一个能画出任意时刻的网页，逐帧渲染成 1080p 视频。AI agent 负责调研、解说词和画面，结果唯一的步骤交给代码，每一步都由频道主确认后才进入下一步。</p>
+
+        <ol class="steps">
+          <li><b>1</b>Research &amp; outline<span>调研 · 大纲</span></li>
+          <li><b>2</b>Script<span>解说词</span></li>
+          <li><b>3</b>Picture<span>画面</span></li>
+          <li><b>4</b>Fact-check<span>联网校对</span></li>
+          <li><b>5</b>Recording<span>真人录音</span></li>
+          <li><b>6</b>HD &amp; publish<span>成片 · 发布</span></li>
+        </ol>
+
+        <div class="feats">
+          <div class="feat">
+            <h4>Harness · 渲染底座</h4>
+            <p>Headless Chrome captures <code>renderAt(t)</code> frame by frame, ffmpeg muxes the soundtrack. Every visual beat is tied to the phrase that's spoken, so the picture re-times itself to any narration.</p>
+            <p class="zh">逐帧截图 + 混音合成；画面跟着旁白的每个短语走，换一版录音，画面自动重新对齐。</p>
+          </div>
+          <div class="feat">
+            <h4>Film kit &amp; styles · 片子套件</h4>
+            <p>A shared frame (title card, captions, outro, covers), 15 motion-design styles, and a hardware-3D pipeline: three.js scenes baked into Blender for the final render.</p>
+            <p class="zh">共用的片头、字幕、片尾和封面；15 种动态设计风格；硬件题材走 three.js → Blender 的 3D 管线。</p>
+          </div>
+          <div class="feat">
+            <h4>Fact-checked · 事实校对</h4>
+            <p>Every claim and every term is checked against primary sources before recording. Hardware sizes on screen come from published data, never estimates.</p>
+            <p class="zh">录音前逐条核对原始资料；屏幕上的硬件尺寸只用公开数据，不估算。</p>
+          </div>
+          <div class="feat">
+            <h4>Recording booth · 录音台</h4>
+            <p>The host's own voice only, recorded line by line in the browser and cut into per-line clips automatically, with an approved voice EQ.</p>
+            <p class="zh">只用频道主本人的声音，网页里逐句录，自动切分、对齐。</p>
+          </div>
+          <div class="feat">
+            <h4>Edit by hand · 所见即所改</h4>
+            <p>Click any element in the preview to change its position, text or timing; split long captions; adjust covers by dragging. Automatic checks for layout, loudness, true peak, black frames and flicker.</p>
+            <p class="zh">点选画面元素直接改位置、文字和时间；封面拖拽调整；排版、响度、黑帧、闪烁自动检查。</p>
+          </div>
+          <div class="feat">
+            <h4>Publish flow · 发布流</h4>
+            <p>Preview exactly what goes out (title, description, tags, cover), then upload to Bilibili and YouTube. Hash-locked to the preview, private by default.</p>
+            <p class="zh">预览什么就上传什么（内容变了要重新预览），默认私有发布，核对无误再公开。</p>
+          </div>
+        </div>
+
+        <p class="fine">EfficStudio runs only on our own computer and uploads only to our own channels; it is not a public service and has no other users. · 它只在我们自己的电脑上运行、只发布到我们自己的频道，不对外提供服务，也没有其他用户。</p>
         <div class="tool-note">
           <b>Google / YouTube</b>
           <p>EfficStudio asks for one Google permission only, <code>youtube.upload</code>, to upload our own videos and set their thumbnails on our own channel. It does not read, change or delete anything else on the account.</p>
