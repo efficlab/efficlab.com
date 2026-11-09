@@ -82,6 +82,30 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 .yt { --c: #ff0033; }
 .bili { --c: #00a1d6; }
 
+.tool { background: var(--card); border-radius: var(--radius); padding: 36px 40px; box-shadow: 0 1px 0 var(--line), 0 20px 50px -24px rgba(90, 61, 43, .25); }
+.tool-head { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+.tool-head svg { width: 56px; height: 56px; flex: none; }
+.tool h3 { font-size: 34px; letter-spacing: -.02em; margin: 0; line-height: 1.1; }
+.tool h3 span { color: var(--teal); }
+.tool .sub { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+.tool p { margin: 0 0 10px; }
+.tool .zh { font-size: 15px; }
+.tool-note { margin: 22px 0 18px; padding: 18px 22px; border-radius: 14px; background: var(--bg); border: 1.5px solid var(--line); }
+.tool-note b { display: block; font-size: 14px; letter-spacing: .06em; margin-bottom: 6px; }
+.tool-note p { font-size: 15px; margin: 0 0 6px; }
+code { font: 13.5px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6px; border-radius: 6px; background: var(--line); }
+.more { font-weight: 700; color: var(--teal); border-bottom: 2px solid transparent; }
+.more:hover { border-color: var(--teal); }
+
+.doc { max-width: 760px; padding-top: 48px; padding-bottom: 24px; }
+.doc h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 8px; }
+.doc h2 { font-size: 20px; margin: 36px 0 8px; }
+.doc p, .doc li { margin: 6px 0; }
+.doc ul { padding-left: 20px; }
+.doc .updated { color: var(--muted); font-size: 14px; }
+.doc a:not(.back) { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+.back { font-weight: 700; color: var(--muted); font-size: 15px; }
+
 .contact .mail { display: inline-block; font-size: clamp(26px, 4.5vw, 44px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 12px; border-bottom: 4px solid var(--yellow); }
 .contact .mail:hover { border-color: var(--teal); }
 .contact p { margin: 4px 0; }
@@ -96,6 +120,8 @@ footer { text-align: center; padding: 48px 0; color: var(--muted); font-size: 14
   .game-art { min-height: 220px; height: 220px; }
   .game-body { padding: 28px 24px; }
   .channels { grid-template-columns: 1fr; }
+  .tool { padding: 28px 24px; }
+  .tool h3 { font-size: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
