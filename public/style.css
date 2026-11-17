@@ -116,6 +116,7 @@ code { font: 13.5px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px
 .contact .mail { display: inline-block; font-size: clamp(26px, 4.5vw, 44px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 12px; border-bottom: 4px solid var(--yellow); }
 .contact .mail:hover { border-color: var(--teal); }
 .contact p { margin: 4px 0; }
+.contact .company { margin-top: 20px; font-size: 14px; color: var(--muted); }
 
 footer { text-align: center; padding: 48px 0; color: var(--muted); font-size: 14px; }
 

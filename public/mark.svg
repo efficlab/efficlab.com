@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 22 84 76">
+  <g transform="translate(12.75 0) skewX(-12)" stroke-linejoin="round" stroke-width="4">
+    <path d="M50 24H94V40H66V52H86V68H66V80H50Z M72 80H92V96H72Z" fill="#2aa1bd" stroke="#2aa1bd"/>
+    <path d="M30 24H50V80H72V96H30Z" fill="#f4d548" stroke="#f4d548"/>
+  </g>
+</svg>
